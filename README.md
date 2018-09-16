@@ -13,5 +13,5 @@ $ openssl x509 -in config/certs/server.csr -out config/certs/server.crt -req -si
 ### Docker Registry & Docker Registry Auth
 
 ```sh
-$ dcoker-compose up
+$ docker-compose up
 ```
