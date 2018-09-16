@@ -15,3 +15,21 @@ $ openssl x509 -in config/certs/server.csr -out config/certs/server.crt -req -si
 ```sh
 $ docker-compose up
 ```
+
+
+## Usage
+
+### login
+```sh
+docker login localhost:5000
+```
+
+### tag image (if needed)
+```sh
+docker tag <image_name_to_push> localhost:5000/<username>/<image_name_to_push_on_remote>
+```
+
+### push image
+```sh
+docker push localhost:5000/<username>/<image_name_to_push_on_remote>
+```
