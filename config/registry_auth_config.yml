@@ -2,8 +2,8 @@ server:  # Server settings.
   # Address to listen on.
   addr: ":5001"
   # TLS certificate and key.
-  certificate: "/certs/server.crt"
-  key: "/certs/server.key"
+  certificate: "/config/certs/server.crt"
+  key: "/config/certs/server.key"
 
 token:  # Settings for the tokens.
   issuer: "Auth Service"  # Must match issuer in the Registry config.
@@ -11,10 +11,15 @@ token:  # Settings for the tokens.
 
 
 # Static user map.
-users:
-  # Password is specified as a BCrypt hash. Use htpasswd -B to generate.
-  "binja@gmail.com":
-    password: "$2a$10$3641k/QMeyjiuehzSGX1bOeWX3yftcxsY7NFblEFDWuJsyHsf/1Ia"
+# users:
+#   # Password is specified as a BCrypt hash. Use htpasswd -B to generate.
+#   "binja@gmail.com":
+#     password: "$2a$10$3641k/QMeyjiuehzSGX1bOeWX3yftcxsY7NFblEFDWuJsyHsf/1Ia"
+#   "test":
+#     password: "$2b$10$cGQcU98/uYXZesoXg7cdb.E5GKFMDOHOIHZ4gauqq8X/D6n3p/10C"
+
+ext_auth:
+  command: "/config/ext_auth.sh"
 
 acl:
   # Admin has full access to everything.
