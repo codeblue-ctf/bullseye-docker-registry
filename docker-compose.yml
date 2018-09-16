@@ -8,7 +8,6 @@ services:
     volumes:
       - ./config:/config:ro
       - ./log:/logs
-      - ./config/certs:/certs
     command: /config/registry_auth_config.yml
     restart: always
 
@@ -26,4 +25,4 @@ services:
       REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE: /certs/server.crt
     volumes:
       - ./data:/var/lib/registry
-      - ./config/certs:/certs
+      - ./config/certs:/certs:ro
