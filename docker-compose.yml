@@ -10,6 +10,8 @@ services:
       - ./log:/logs
     command: /config/registry_auth_config.yml
     restart: always
+    depends_on:
+      - registry
 
   registry:
     restart: always
@@ -17,6 +19,8 @@ services:
     ports:
       - 5000:5000
     environment:
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/server.crt
+      REGISTRY_HTTP_TLS_KEY: /certs/server.key
       REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
       REGISTRY_AUTH: token
       REGISTRY_AUTH_TOKEN_REALM: https://localhost:5001/auth
