@@ -5,6 +5,9 @@ services:
     image: cesanta/docker_auth
     ports:
       - "5001:5001"
+    environment:
+      - BULLSEYE_WEB_URL
+      - BULLSEYE_API_AUTH_TOKEN
     volumes:
       - ./config:/config:ro
       - ./log:/logs
