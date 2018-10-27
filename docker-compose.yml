@@ -23,7 +23,7 @@ services:
       REGISTRY_HTTP_TLS_KEY: /certs/server.key
       REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
       REGISTRY_AUTH: token
-      REGISTRY_AUTH_TOKEN_REALM: https://localhost:5001/auth
+      REGISTRY_AUTH_TOKEN_REALM: https://$DOCKER_REGISTRY_AUTH_HOST/auth
       REGISTRY_AUTH_TOKEN_SERVICE: "Docker registry"
       REGISTRY_AUTH_TOKEN_ISSUER: "Auth Service"
       REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE: /certs/server.crt
