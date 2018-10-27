@@ -6,12 +6,10 @@ fi
 
 read username password
 
-# result=`wget -O- $BULLSEYE_WEB_URL --post-data "username=$username&password=$password"``
+# TODO: RCE may occur!!!!!!
+result=`curl "$BULLSEYE_WEB_URL/internal_api/v1/login.json" -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $BULLSEYE_API_AUTH_TOKEN" --data "{\"name\":\"$username\",\"password\":\"$password\"}"`
 
-exit 0
-
-if [ $? -eq 0 ]; then
-    # echo $result
+if [ $result = '{"result":"success"}' ]; then
     exit 0
 fi
 
