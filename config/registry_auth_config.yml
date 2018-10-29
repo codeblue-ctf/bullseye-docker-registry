@@ -18,3 +18,5 @@ acl:
     actions: ["*"]
   - match: {account: "/.+/", name: "${account}/*"}
     actions: ["pull", "push"]
+  - match: {account: "/.+/", name: "public/*"}
+    actions: ["pull", "push"]
