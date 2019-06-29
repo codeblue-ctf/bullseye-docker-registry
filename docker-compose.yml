@@ -22,14 +22,7 @@ services:
     ports:
       - 5000:5000
     environment:
-      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/server.crt
-      REGISTRY_HTTP_TLS_KEY: /certs/server.key
-      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
-      REGISTRY_AUTH: token
       REGISTRY_AUTH_TOKEN_REALM: https://$DOCKER_REGISTRY_AUTH_HOST/auth
-      REGISTRY_AUTH_TOKEN_SERVICE: "Docker registry"
-      REGISTRY_AUTH_TOKEN_ISSUER: "Auth Service"
-      REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE: /certs/server.crt
       REGISTRY_NOTIFICATION_ENDPOINT: $BULLSEYE_WEB_URL/internal_api/v1/registry_event
       REGISTRY_NOTIFICATION_TOKEN: "Bearer $BULLSEYE_API_AUTH_TOKEN"
     volumes:
