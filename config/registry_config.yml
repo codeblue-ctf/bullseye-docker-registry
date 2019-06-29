@@ -23,7 +23,7 @@ auth:
   token:
     realm: _env:REGISTRY_AUTH_TOKEN_REALM
     service: "Docker registry"
-    issuer: "Auth service"
+    issuer: "Auth Service"
     rootcertbundle: /certs/server.crt
 notifications:
   endpoints:
