@@ -22,3 +22,10 @@ acl:
     actions: ["pull"]
   - match: {account: "/.+/", name: "public/*"}
     actions: ["pull"]
+
+notifications:
+  endpoints:
+    - name: bullseye-web
+      url: _env:REGISTRY_NOTIFICATION_ENDPOINT:
+      headers:
+        Authorization: _env:REGISTRY_NOTIFICATION_TOKEN:

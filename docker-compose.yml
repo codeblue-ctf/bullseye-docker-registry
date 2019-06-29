@@ -30,6 +30,8 @@ services:
       REGISTRY_AUTH_TOKEN_SERVICE: "Docker registry"
       REGISTRY_AUTH_TOKEN_ISSUER: "Auth Service"
       REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE: /certs/server.crt
+      REGISTRY_NOTIFICATION_ENDPOINT: $BULLSEYE_WEB_NOTIFICATION_URL
+      REGISTRY_NOTIFICATION_TOKEN: $BULLSEYE_WEB_NOTIFICATION_TOKEN
     volumes:
       - ./data:/var/lib/registry
       - ./config/certs:/certs:ro
