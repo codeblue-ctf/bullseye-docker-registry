@@ -6,8 +6,8 @@ services:
     ports:
       - "5001:5001"
     environment:
-      - BULLSEYE_WEB_URL
-      - BULLSEYE_API_AUTH_TOKEN
+      BULLSEYE_WEB_URL: $BULLSEYE_WEB_URL
+      BULLSEYE_API_AUTH_TOKEN: $BULLSEYE_API_AUTH_TOKEN
     volumes:
       - ./config:/config:ro
       - ./log:/logs
@@ -35,3 +35,4 @@ services:
     volumes:
       - ./data:/var/lib/registry
       - ./config/certs:/certs:ro
+      - ./config/registry_config.yml:/etc/docker/registry/config.yml:ro
