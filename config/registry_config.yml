@@ -1,6 +1,6 @@
 notifications:
   endpoints:
     - name: bullseye-web
-      url: _env:REGISTRY_NOTIFICATION_ENDPOINT:
+      url: _env:REGISTRY_NOTIFICATION_ENDPOINT
       headers:
-        Authorization: _env:REGISTRY_NOTIFICATION_TOKEN:
+        Authorization: _env:REGISTRY_NOTIFICATION_TOKEN
