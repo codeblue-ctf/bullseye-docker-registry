@@ -21,7 +21,6 @@ health:
     threshold: 3
 auth:
   token:
-    realm: _env:REGISTRY_AUTH_TOKEN_REALM
     service: "Docker registry"
     issuer: "Auth Service"
     rootcertbundle: /certs/server.crt
