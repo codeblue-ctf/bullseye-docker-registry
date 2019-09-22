@@ -9,6 +9,8 @@ For example
 
 ```
 DOCKER_REGISTRY_AUTH_HOST=localhost:5001
+BULLSEYE_WEB_URL=http://localhost:3000
+BULLSEYE_API_AUTH_TOKEN="please set auth token"
 ```
 
 ### Generate server certificate for Docker Registry Auth
