@@ -24,7 +24,7 @@ services:
     environment:
       REGISTRY_AUTH_TOKEN_REALM: https://$DOCKER_REGISTRY_AUTH_HOST/auth
       REGISTRY_AUTH_TOKEN_ISSUER: "Auth Service"
-      REGISTRY_NOTIFICATIONS_ENDPOINTS: "- name: bullseye-web\n  url: $BULLSEYE_WEB_URL/internal_api/v1/registry_event\n  headers:\n    Authorization: [Bearer $BULLSEYE_API_AUTH_TOKEN]\n  timeout: 500ms\n  threshold: 5\n  backoff: 1s"
+      REGISTRY_NOTIFICATIONS_ENDPOINTS: "- name: bullseye-runner\n  url: $BULLSEYE_RUNNER_NOTIFICATION_URL\n  timeout: 2000ms\n  threshold: 5\n  backoff: 1s"
     volumes:
       - ./data:/var/lib/registry
       - ./config/certs:/certs:ro
